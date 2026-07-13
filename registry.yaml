@@ -40,6 +40,24 @@
     - RAG
     - structured-outputs
 
+- title: "SchemaFlow: Agentic Database Analysis Runtime"
+  path: examples/partners/schemaflow_design_guide/agentic_database_analysis/README.md
+  slug: schemaflow-agentic-database-analysis-runtime
+  description: Run the SchemaFlow sample graph locally with Neo4j, optional Responses API enrichment, and a read-only D3 dashboard.
+  date: 2026-07-13
+  authors:
+    - shikhar-cyber
+    - Atharva Joshi
+    - Mohan Kocherlakota
+    - Adam Horvath
+    - Shashwat Jha
+  tags:
+    - partners
+    - responses
+    - databases
+    - neo4j
+    - visualization
+
 - title: Getting Started with OpenAI Models on Amazon Bedrock
   path: examples/partners/AWS/openai_models_with_amazon_bedrock.ipynb
   slug: openai-models-with-amazon-bedrock

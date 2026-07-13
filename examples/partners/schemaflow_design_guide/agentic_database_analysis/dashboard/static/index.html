@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SchemaFlow Knowledge Graph</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script
+    src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"
+    integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i"
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>SchemaFlow Knowledge Graph</h1>
+      <p>Lineage, joins, foreign keys, and AI-enriched column semantics for the sample loyalty-tier change.</p>
+    </div>
+    <button id="refreshButton" type="button">Refresh</button>
+  </header>
+
+  <main>
+    <section class="metrics" id="metrics"></section>
+
+    <section class="workspace">
+      <div class="graph-panel">
+        <div class="panel-heading">
+          <h2>Database Impact Map</h2>
+          <div class="legend">
+            <span><i class="dot schema"></i>Schema</span>
+            <span><i class="dot table"></i>Table</span>
+            <span><i class="dot view"></i>View</span>
+          </div>
+        </div>
+        <svg id="graph" role="img" aria-label="SchemaFlow knowledge graph"></svg>
+      </div>
+
+      <aside class="details-panel">
+        <h2>Selection</h2>
+        <div id="selection">Select a node to inspect its columns and relationships.</div>
+      </aside>
+    </section>
+
+    <section class="insights">
+      <h2>Column Semantic Insights</h2>
+      <div id="insightsGrid" class="insights-grid"></div>
+    </section>
+  </main>
+
+  <div id="status" class="status">Loading graph data...</div>
+  <script src="/static/script.js"></script>
+</body>
+</html>
