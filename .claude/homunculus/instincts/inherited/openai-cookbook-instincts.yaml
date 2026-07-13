@@ -1,0 +1,623 @@
+# Instincts generated from https://github.com/miles-chu10/openai-cookbook
+# Generated: 2026-07-13T23:26:53.444Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: openai-cookbook-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Commit Length
+
+## Action
+
+Keep commit messages concise (~46 characters)
+
+## Evidence
+
+- Average commit message length: 46 chars
+- Based on 40 commits
+
+---
+id: openai-cookbook-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: openai-cookbook-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: openai-cookbook-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Test Framework
+
+## Action
+
+Use vitest as the test framework
+
+## Evidence
+
+- Test framework detected: vitest
+- File pattern: *.test.js
+
+---
+id: openai-cookbook-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.js
+
+## Evidence
+
+- File pattern: *.test.js
+- Consistent across test files
+
+---
+id: openai-cookbook-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Test Types
+
+## Action
+
+Write unit, integration tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration
+- Coverage config: no
+
+---
+id: openai-cookbook-workflow-database-migration
+trigger: "when modifying the database schema or adding tables"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Workflow Database Migration
+
+## Action
+
+Follow the database-migration workflow:
+1. Create migration file
+2. Update schema definitions
+3. Generate/update types
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: migrations/*, **/schema.*
+
+---
+id: openai-cookbook-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~11x per month
+- Files: examples/voice_solutions/realtime_translation_guide/livekit-translation-demo/app/[roomname]/*, examples/voice_solutions/realtime_translation_guide/livekit-translation-demo/app/api/livekit/*, examples/voice_solutions/realtime_translation_guide/livekit-translation-demo/app/api/livekit/participants/*
+
+---
+id: openai-cookbook-workflow-add-new-cookbook-example
+trigger: "when doing add new cookbook example"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Workflow Add New Cookbook Example
+
+## Action
+
+Follow the add-new-cookbook-example workflow:
+1. Create new example files (e.g., .ipynb, .md, .py) in an appropriate subdirectory under examples/
+2. Add any required assets (e.g., images/, assets/, data/)
+3. Update registry.yaml to register the new example
+4. Optionally update authors.yaml if new authors are involved
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: examples/**/[!tests]**/*.{ipynb,md,py}, images/**/*, registry.yaml
+
+---
+id: openai-cookbook-workflow-add-multifile-demo-or-app
+trigger: "when doing add multifile demo or app"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Workflow Add Multifile Demo Or App
+
+## Action
+
+Follow the add-multifile-demo-or-app workflow:
+1. Create a new subdirectory under examples/ with code (e.g., .py, .js, .ts, .sh, .json, .html, .css, etc.)
+2. Add supporting files: README.md, requirements.txt or package.json, .gitignore, etc.
+3. Add assets (e.g., images, screenshots, public/ files)
+4. Add tests (e.g., tests/ or test/ subfolders)
+5. Update registry.yaml to register the new demo/app
+6. Optionally update authors.yaml
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: examples/**/demo*/**/*, examples/**/deployment_manager/**/*, examples/**/agentic_database_analysis/**/*
+
+---
+id: openai-cookbook-workflow-update-existing-cookbook-or-example
+trigger: "when doing update existing cookbook or example"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Workflow Update Existing Cookbook Or Example
+
+## Action
+
+Follow the update-existing-cookbook-or-example workflow:
+1. Edit the main example file (e.g., .ipynb, .md)
+2. Update or add related assets (e.g., images/)
+3. Optionally update registry.yaml if metadata changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: examples/**/*.ipynb, examples/**/*.md, images/**/*
+
+---
+id: openai-cookbook-workflow-register-or-publish-cookbook
+trigger: "when doing register or publish cookbook"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Workflow Register Or Publish Cookbook
+
+## Action
+
+Follow the register-or-publish-cookbook workflow:
+1. Edit registry.yaml to add, update, or archive cookbook entries
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: registry.yaml
+
+---
+id: openai-cookbook-workflow-add-author
+trigger: "when doing add author"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Workflow Add Author
+
+## Action
+
+Follow the add-author workflow:
+1. Edit authors.yaml to add new author information
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: authors.yaml
+
+---
+id: openai-cookbook-instinct-file-naming
+trigger: "When creating a new file in the repository"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct File Naming
+
+## Action
+
+Name the file using camelCase convention
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+
+---
+id: openai-cookbook-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: openai-cookbook-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: openai-cookbook-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: openai-cookbook-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Import Style
+
+## Action
+
+Use absolute import paths
+
+## Evidence
+
+- Pattern in importStyle: absolute
+
+---
+id: openai-cookbook-instinct-export-style
+trigger: "When exporting modules or functions"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: openai-cookbook-instinct-test-file-pattern
+trigger: "When adding a test file"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Test File Pattern
+
+## Action
+
+Name the file with the pattern *.test.js
+
+## Evidence
+
+- Pattern in testing.filePattern: *.test.js
+
+---
+id: openai-cookbook-instinct-test-framework
+trigger: "When writing tests for JavaScript/TypeScript code"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Test Framework
+
+## Action
+
+Use the vitest testing framework
+
+## Evidence
+
+- Pattern in testing.framework: vitest
+
+---
+id: openai-cookbook-instinct-test-types
+trigger: "When designing test coverage"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Test Types
+
+## Action
+
+Include both unit and integration tests
+
+## Evidence
+
+- Pattern in testing.testTypes: unit, integration
+
+---
+id: openai-cookbook-instinct-git-commit-prefix
+trigger: "When writing a commit message related to Codex"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Git Commit Prefix
+
+## Action
+
+Prefix the commit message with [codex]
+
+## Evidence
+
+- Pattern in commits.prefixes: [codex]
+- Seen in commit: [codex] Pin GitHub Actions workflow references (#2558)
+
+---
+id: openai-cookbook-instinct-git-commit-length
+trigger: "When writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Git Commit Length
+
+## Action
+
+Keep commit messages concise, averaging around 46 characters
+
+## Evidence
+
+- Pattern in commits.averageLength: 46
+
+---
+id: openai-cookbook-instinct-git-commit-format
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Git Commit Format
+
+## Action
+
+Use a format of <type>(<scope>): <description> (#PR)
+
+## Evidence
+
+- Seen in commit: docs(codex): update code review cookbook (#2650)
+
+---
+id: openai-cookbook-instinct-add-new-cookbook-example
+trigger: "When someone wants to contribute a new example, guide, or cookbook"
+confidence: 0.98
+domain: workflow
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Add New Cookbook Example
+
+## Action
+
+Create new example files under examples/, add assets, update registry.yaml, and optionally authors.yaml
+
+## Evidence
+
+- Workflow: add-new-cookbook-example
+- Files: examples/**/[!tests]**/*.{ipynb,md,py}, images/**/*, registry.yaml, authors.yaml
+
+---
+id: openai-cookbook-instinct-add-multifile-demo-or-app
+trigger: "When someone wants to add a new multi-file demo, app, or SDK example"
+confidence: 0.92
+domain: workflow
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Add Multifile Demo Or App
+
+## Action
+
+Create a new subdirectory under examples/, add code, assets, tests, update registry.yaml, and optionally authors.yaml
+
+## Evidence
+
+- Workflow: add-multifile-demo-or-app
+- Files: examples/**/demo*/**, examples/**/deployment_manager/**, registry.yaml, authors.yaml
+
+---
+id: openai-cookbook-instinct-update-existing-cookbook-or-example
+trigger: "When someone wants to improve, correct, or extend an existing example or guide"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Update Existing Cookbook Or Example
+
+## Action
+
+Edit the main example file, update/add assets, and optionally update registry.yaml
+
+## Evidence
+
+- Workflow: update-existing-cookbook-or-example
+- Files: examples/**/*.ipynb, examples/**/*.md, images/**/*, registry.yaml
+
+---
+id: openai-cookbook-instinct-register-or-publish-cookbook
+trigger: "When someone wants to publish, archive, or update the status of a cookbook/example"
+confidence: 0.99
+domain: workflow
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Register Or Publish Cookbook
+
+## Action
+
+Edit registry.yaml to add, update, or archive cookbook entries
+
+## Evidence
+
+- Workflow: register-or-publish-cookbook
+- Files: registry.yaml
+
+---
+id: openai-cookbook-instinct-add-author
+trigger: "When someone wants to credit a new author for a new example or update"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: miles-chu10/openai-cookbook
+---
+
+# Openai Cookbook Instinct Add Author
+
+## Action
+
+Edit authors.yaml to add new author information
+
+## Evidence
+
+- Workflow: add-author
+- Files: authors.yaml
+
